@@ -356,6 +356,9 @@ class PaddleBackend(AbstractBackend):
     def is_appropriate_type(self, tensor):
         return isinstance(tensor, self.paddle.Tensor)
 
+    def shape(self, x):
+        return tuple(x.shape)
+
     def from_numpy(self, x):
         variable = self.paddle.Tensor(x)
         if self.is_float_type(variable):
