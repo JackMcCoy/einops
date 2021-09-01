@@ -391,6 +391,8 @@ class PaddleBackend(AbstractBackend):
         return self.paddle.stack(tensors)
 
     def tile(self, x, repeats):
+        print(x.shape)
+        print(repeats)
         return self.paddle.expand(x,repeats)
 
     def add_axis(self, x, new_position):
