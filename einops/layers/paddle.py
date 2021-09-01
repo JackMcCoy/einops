@@ -6,12 +6,12 @@ from ._weighted_einsum import WeightedEinsumMixin
 __author__ = 'Alex Rogozhnikov'
 
 
-class Rearrange(paddle.nn.Layer,RearrangeMixin):
+class Rearrange(RearrangeMixin,paddle.nn.Layer):
     def forward(self, input):
         return self._apply_recipe(input)
 
 
-class Reduce(paddle.nn.Layer,ReduceMixin):
+class Reduce(ReduceMixin,paddle.nn.Layer):
     def forward(self, input):
         return self._apply_recipe(input)
 
